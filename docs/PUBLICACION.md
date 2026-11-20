@@ -6,6 +6,14 @@ La aplicación está preparada para publicarse como un único sitio ASP.NET Core
 
 MonsterASP.NET ofrece alojamiento de ASP.NET Core y una base Microsoft SQL Server en su plan gratuito. La cuenta y la activación corresponden al propietario del proyecto. Verifique las condiciones vigentes en el [sitio oficial](https://www.monsterasp.net/) y la [documentación](https://help.monsterasp.net/).
 
+## Publicación de esta entrega
+
+La dirección principal es **https://estante-proyecto2.tryasp.net/** y la documentación de la API está en **https://estante-proyecto2.tryasp.net/swagger/**. Se usa ASP.NET Core 10 con una base SQL Server 2025 del mismo alojamiento, tablas `PP2_Productos` y `PP2_Usuarios`, y la conexión `ConnectionStrings__Inventario` configurada en las variables privadas del servidor. La conexión SQL utiliza TLS con validación del certificado.
+
+La base se inicializó desde el editor T-SQL del panel, con el esquema de la aplicación, ocho productos de ejemplo y la contraseña de evaluación como hash de ASP.NET Core Identity. El ZIP compilado se subió fuera de la carpeta pública y se extrajo en `/wwwroot`; React queda en la subcarpeta `wwwroot` del paquete ASP.NET Core. No es necesario subir las credenciales de SQL en el ZIP.
+
+El dominio gratuito alternativo `tryasp.net` permite acceder desde la red de desarrollo, cuyo DNS no resuelve `runasp.net`. El estado y las pruebas realizadas se detallan en [VERIFICACION.md](VERIFICACION.md).
+
 ## Pasos
 
 1. Cree y active una cuenta del alojamiento. Cree un sitio para ASP.NET Core 10 y una base **SQL Server vacía**, dedicada a este proyecto.

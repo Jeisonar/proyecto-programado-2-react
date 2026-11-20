@@ -40,4 +40,40 @@ Ejecutado `scripts/test-api.mjs` contra `http://localhost:5082`, conectado a la 
 
 ## Estado de publicación
 
-Pendiente de crear o conectar el alojamiento y la base SQL Server remota. No se ha verificado todavía la aplicación publicada. La cuenta del proveedor requiere intervención de su propietario.
+**Publicación completada y verificada el 20 de noviembre de 2026.**
+
+- React: https://estante-proyecto2.tryasp.net/
+- API: https://estante-proyecto2.tryasp.net/api/productos
+- Swagger: https://estante-proyecto2.tryasp.net/swagger/
+- OpenAPI: https://estante-proyecto2.tryasp.net/openapi/v1.json
+- Repositorio: https://github.com/Jeisonar/proyecto-programado-2, rama `main`.
+
+El sitio se ejecuta en MonsterASP.NET con ASP.NET Core 10 y SQL Server 2025 remoto. `GET /api/salud` devuelve 200 y confirma el acceso a SQL Server. El certificado HTTPS está activo; HTTP redirige a HTTPS con 307. Swagger y la especificación OpenAPI devuelven 200.
+
+## API publicada
+
+Ejecutado `scripts/test-api.mjs` directamente contra `https://estante-proyecto2.tryasp.net`, con resolución DNS normal y validación TLS. Aprobaron las verificaciones de acceso protegido, credenciales incorrectas y correctas, listado, datos inválidos, alta, consulta por ID, persistencia, edición y eliminación. El registro temporal se eliminó al terminar.
+
+## Interfaz React publicada
+
+Pruebas realizadas desde el navegador sobre el sitio HTTPS público:
+
+| Funcionalidad | Resultado observado |
+| --- | --- |
+| Validación de credenciales | La contraseña incorrecta muestra un error en español; la correcta inicia sesión. |
+| Listado | Se cargan los ocho productos iniciales desde la API. |
+| Campos obligatorios | Un formulario vacío no se puede enviar; el nombre se marca como requerido. |
+| Agregar | El formulario crea el producto temporal #11 y muestra la confirmación de guardado en la base. |
+| Persistencia | Después de recargar la página, la sesión se conserva y el producto sigue disponible para editar. |
+| Actualizar | Se cambian nombre, precio y existencias desde el formulario y aparece el mensaje de éxito. |
+| Consultar por ID | La consulta del ID 11 muestra el nombre actualizado, precio ₡4 999,75 y nueve unidades. |
+| Confirmar eliminación | El diálogo identifica el nombre y el ID del producto y advierte que la eliminación es definitiva. |
+| Cancelar eliminación | El producto permanece en el listado. |
+| Eliminar | Al confirmar, el producto desaparece y se muestra el mensaje de éxito. |
+| Registro inexistente | Consultar el ID eliminado muestra «No existe un producto con el identificador 11». |
+| Filtro por categoría | Tecnología muestra los dos productos correspondientes. |
+| Detalle | Se consulta el producto #1 y se muestran nombre, categoría, precio, existencias, descripción y actualización. |
+
+Al finalizar quedaron los ocho productos de ejemplo, 143 unidades y un valor total de ₡1 221 000,00. No quedaron registros de verificación. Los errores de conexión se probaron localmente con el mismo cliente React compilado; en la publicación no se interrumpió el servicio para simular una caída.
+
+![Inventario verificado desde la aplicación publicada](evidencia-publicacion.jpg)

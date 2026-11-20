@@ -2,7 +2,14 @@
 
 Aplicación de inventario de productos desarrollada en **React y TypeScript**, con una **API REST en ASP.NET Core 10**, Entity Framework Core y **Microsoft SQL Server**. La solución se abre en Visual Studio. El repositorio es independiente de los proyectos anteriores.
 
-Repositorio: [Jeisonar/proyecto-programado-2](https://github.com/Jeisonar/proyecto-programado-2), rama `main`. Publicación pública: pendiente de configurar el alojamiento del propietario.
+Repositorio: [Jeisonar/proyecto-programado-2](https://github.com/Jeisonar/proyecto-programado-2), rama `main`.
+
+- Aplicación React: https://estante-proyecto2.tryasp.net/
+- API utilizada: https://estante-proyecto2.tryasp.net/api/productos
+- Swagger: https://estante-proyecto2.tryasp.net/swagger/
+- Salud de la API y SQL Server: https://estante-proyecto2.tryasp.net/api/salud
+
+El alojamiento de esta entrega es MonsterASP.NET. React y la API se publican juntos; la base SQL Server remota es independiente de la base de desarrollo local. Las credenciales de evaluación se entregan por separado.
 
 ## Funcionalidades
 
