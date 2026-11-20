@@ -46,7 +46,7 @@ Ejecutado `scripts/test-api.mjs` contra `http://localhost:5082`, conectado a la 
 - API: https://estante-proyecto2.tryasp.net/api/productos
 - Swagger: https://estante-proyecto2.tryasp.net/swagger/
 - OpenAPI: https://estante-proyecto2.tryasp.net/openapi/v1.json
-- Repositorio: https://github.com/Jeisonar/proyecto-programado-2, rama `main`.
+- Repositorio: https://github.com/Jeisonar/proyecto-programado-2-react, rama `main`.
 
 El sitio se ejecuta en MonsterASP.NET con ASP.NET Core 10 y SQL Server 2025 remoto. `GET /api/salud` devuelve 200 y confirma el acceso a SQL Server. El certificado HTTPS está activo; HTTP redirige a HTTPS con 307. Swagger y la especificación OpenAPI devuelven 200.
 

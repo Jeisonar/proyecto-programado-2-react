@@ -2,7 +2,7 @@
 
 Aplicación de inventario de productos desarrollada en **React y TypeScript**, con una **API REST en ASP.NET Core 10**, Entity Framework Core y **Microsoft SQL Server**. La solución se abre en Visual Studio. El repositorio es independiente de los proyectos anteriores.
 
-Repositorio: [Jeisonar/proyecto-programado-2](https://github.com/Jeisonar/proyecto-programado-2), rama `main`.
+Repositorio: [Jeisonar/proyecto-programado-2-react](https://github.com/Jeisonar/proyecto-programado-2-react), rama `main`.
 
 - Aplicación React: https://estante-proyecto2.tryasp.net/
 - API utilizada: https://estante-proyecto2.tryasp.net/api/productos
