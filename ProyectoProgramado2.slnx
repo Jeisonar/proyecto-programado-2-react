@@ -1,0 +1,23 @@
+<Solution>
+  <Folder Name="/React/">
+    <File Path="client/src/App.tsx" />
+    <File Path="client/src/api.ts" />
+    <File Path="client/src/main.tsx" />
+    <File Path="client/src/styles.css" />
+    <File Path="index.html" />
+    <File Path="package.json" />
+    <File Path="vite.config.ts" />
+    <File Path="tsconfig.json" />
+  </Folder>
+  <Folder Name="/Documentación/">
+    <File Path="README.md" />
+    <File Path="docs/PUBLICACION.md" />
+    <File Path="docs/VERIFICACION.md" />
+    <File Path="scripts/Preparar-Local.ps1" />
+    <File Path="scripts/Publicar.ps1" />
+    <File Path="scripts/test-api.mjs" />
+  </Folder>
+  <Folder Name="/server/">
+    <Project Path="server/ProyectoProgramado2.Api.csproj" />
+  </Folder>
+</Solution>

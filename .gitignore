@@ -1,0 +1,15 @@
+node_modules/
+dist/
+.vs/
+**/bin/
+**/obj/
+artifacts/
+.env
+.env.*
+!.env.example
+*.user
+*.suo
+**/Properties/PublishProfiles/
+*.zip
+docs/ACCESO-PRUEBAS.local.txt
+.sites-runtime/

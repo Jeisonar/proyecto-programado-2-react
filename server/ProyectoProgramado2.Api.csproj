@@ -1,0 +1,28 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <UserSecretsId>proyecto-programado-2-api</UserSecretsId>
+    <NodeExecutable Condition="'$(NodeExecutable)' == ''">node</NodeExecutable>
+    <NodeExecutable Condition="'$(VSInstallDir)' != '' and Exists('$(VSInstallDir)MSBuild/Microsoft/VisualStudio/NodeJs/node.exe')">$(VSInstallDir)MSBuild/Microsoft/VisualStudio/NodeJs/node.exe</NodeExecutable>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="10.0.13" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="10.0.9" />
+    <PackageReference Include="Swashbuckle.AspNetCore.SwaggerUI" Version="10.3.1" />
+    <PackageReference Include="System.Security.Cryptography.Pkcs" Version="10.0.15" />
+  </ItemGroup>
+  <Target Name="BuildReact" BeforeTargets="PrepareForBuild" Condition="'$(DesignTimeBuild)' != 'true' and '$(SkipClientBuild)' != 'true'">
+    <Exec Command="&quot;$(NodeExecutable)&quot; &quot;$(MSBuildProjectDirectory)/../scripts/client.mjs&quot; build" />
+  </Target>
+  <Target Name="PublishReact" AfterTargets="ComputeFilesToPublish">
+    <ItemGroup>
+      <_ReactDist Include="../dist/**" />
+      <ResolvedFileToPublish Include="@(_ReactDist)">
+        <RelativePath>wwwroot/%(_ReactDist.RecursiveDir)%(_ReactDist.Filename)%(_ReactDist.Extension)</RelativePath>
+        <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      </ResolvedFileToPublish>
+    </ItemGroup>
+  </Target>
+</Project>
